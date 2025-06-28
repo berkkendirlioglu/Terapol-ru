@@ -1,103 +1,93 @@
+import AboutSlider from "@/components/AboutSlider/AboutSlider";
+import Accordion from "@/components/Accordion";
+import HeroSlider from "@/components/HeroSlider/HeroSlider";
+import PageContainer from "@/components/PageContainer";
+import ProductSection from "@/components/ProductsSection/ProductSection";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      <section id="homepage" className="h-auto">
+        <HeroSlider />
+      </section>
+      <section id="about" className="h-auto py-24 flex justify-center">
+        <PageContainer className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+          <div className="flex flex-col gap-2">
+            <span className="text-[26px]">О нас</span>
+            <hr className="border-[2px] border-[#312783] w-[70px] !bg-[#312783]" />
+            <div className="flex flex-col gap-8 pt-6">
+              <p className="text-[14px] text-[#888] leading-[2]">
+                динамичная команда, которая, проработав 30 лет в
+                профессиональной сфере строительной химии в ведущих компаниях
+                отрасли, с энтузиазмом и решимостью начала собственное дело,
+                чтобы применить накопленный опыт и знания.
+              </p>
+              <p className="text-[14px] text-[#888] leading-[2]">
+                производственная компания с широким ассортиментом
+                качественной и сертифицированной продукции, предлагающая решения
+                в следующих областях: гидроизоляционные материалы,
+                полиуретановая гидроизоляция, полиуретановая и полимочевинная
+                гидроизоляция, промышленные наливные полы, полиуретановые и
+                эпоксидные инъекции, полиуретановые и эпоксидные грунтовки,
+                ремонтные составы на основе эпоксидной смолы и цемента, а также
+                защита поверхностей.
+              </p>
+            </div>
+          </div>
+          <div>
+            <AboutSlider />
+          </div>
+        </PageContainer>
+      </section>
+      <section id="products" className="h-auto flex justify-center">
+        <PageContainer>
+          <div className="flex flex-col gap-6 justify-center items-center">
+            <h2 className="text-[30px]">Системы продукции</h2>
+            <hr className="border-[2px] border-[#312783] w-[70px] !bg-[#312783]" />
+          </div>
+          <div className="py-18">
+            <ProductSection />
+          </div>
+        </PageContainer>
+      </section>
+      <section
+        id="terapol"
+        className="bg-[#312783] py-8 flex justify-center items-center"
+      >
+        <PageContainer>
+          <div className="flex justify-between items-center">
+            <p className="text-white text-[22px]">
+              TERAPOL СТРОИТЕЛЬНАЯ ХИМИЯ A.Ş
+            </p>
+            <Link
+              className="py-3 px-8 bg-white font-bold tracking-[.1em] text-[#312783] rounded-[2px]"
+              href={"tel:+79853336009"}
+            >
+              Контакты
+            </Link>
+          </div>
+        </PageContainer>
+      </section>
+      <section className="h-auto py-12 grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative">
+          <Image
+            className="object-cover"
+            src="/assets/whyTerapol.png"
+            alt="Terapol"
+            width={960}
+            height={500}
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="px-8 py-16 lg:px-18 lg:py-24 flex flex-col gap-12">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[30px]">Почему выбирают Terapol?</h2>
+            <hr className="border-[2px] border-[#312783] w-[70px] !bg-[#312783]" />
+          </div>
+          <Accordion />
+        </div>
+      </section>
+    </main>
   );
 }
