@@ -107,25 +107,25 @@ export default function Navbar() {
             <div className="flex flex-col justify-center gap-3 px-6">
               <Link
                 className="text-black text-[16px] font-bold hover:text-[#333]"
-                href={"/"}
+                href={"#homepage"}
               >
                 Главная
               </Link>
               <Link
                 className="text-black text-[16px] font-bold hover:text-[#333]"
-                href={"/"}
+                href={"#about"}
               >
                 О нас
               </Link>
               <Link
                 className="text-black text-[16px] font-bold hover:text-[#333]"
-                href={"/"}
+                href={"#products"}
               >
                 Продукция
               </Link>
               <Link
                 className="text-black text-[16px] font-bold hover:text-[#333]"
-                href={"/"}
+                href={"#terapol"}
               >
                 Почему мы?
               </Link>
